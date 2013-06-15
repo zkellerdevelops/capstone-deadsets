@@ -17,8 +17,6 @@ development:
   encoding: unicode
   database: capstone-deadsets_development
   pool: 5
-  username: capstone-deadsets
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -38,18 +36,19 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: capstone-deadsets_test
   pool: 5
-  username: capstone-deadsets
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: capstone-deadsets_production
   pool: 5
-  username: capstone-deadsets
-  password:
+
+
+cucumber:
+  <<: *test
