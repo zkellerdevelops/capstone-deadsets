@@ -4,7 +4,7 @@ CapstoneDeadsets::Application.routes.draw do
 
   resources :concerts
 
-  root :to => "home#index"
+  root :to => "concerts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

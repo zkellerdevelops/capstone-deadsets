@@ -1,0 +1,16 @@
+<h1>Welcome to Deadsets</h1>
+<%= "Concert is #{@concert}" %>
+
+<%= form_tag concerts_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% @concerts.each do |concert| %>
+  <p>
+    <%= concert.details %>
+  </p>
+<% end %>
+
+
+<%= link_to "Log In", new_user_session_path %>
