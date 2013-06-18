@@ -1,5 +1,8 @@
 CapstoneDeadsets::Application.routes.draw do
+
   devise_for :users
+
+  resources :concerts
 
   root :to => "home#index"
 

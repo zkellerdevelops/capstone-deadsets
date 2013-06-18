@@ -1,3 +1,11 @@
-<h1>Hello!</h1>
+<h1>Welcome to Deadsets</h1>
+<%= "Concert is #{@concert}" %>
+<%= form_for @concert do |f| %>
+  <%= f.label :date, "Enter show date:" %>
+  <%= f.text_field :date %>
+  <%= f.submit "Submit"%>
+<% end %>
+
+<h2><%= @concert %></h2>
 
 <%= link_to "Log In", new_user_session_path %>

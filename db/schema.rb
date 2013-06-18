@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615194944) do
+ActiveRecord::Schema.define(:version => 20130617184735) do
 
-  create_table "setlists", :force => true do |t|
-    t.text     "showdate"
-    t.text     "deadset"
+  create_table "concerts", :force => true do |t|
+    t.string   "date"
+    t.text     "details"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
