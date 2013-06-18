@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+
+
+h1 {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 3em;
+}
+
+h2 {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.5em;
+}
+
+p {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1em;
+}

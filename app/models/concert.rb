@@ -6,6 +6,9 @@ class Concert < ActiveRecord::Base
       where(:date => search).all
     else
       []
+    if @search.blank?
+      flash[:notice] = 'No concert for this date'
+    end
     end
   end
 end

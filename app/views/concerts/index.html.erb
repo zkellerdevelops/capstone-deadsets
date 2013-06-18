@@ -1,14 +1,21 @@
 <h1>Welcome to Deadsets</h1>
+<h2>Please enter a Grateful Dead concert date in the MM-DD-YY format</h2>
 
 <%= form_tag concerts_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
 
-<% @concerts.each do |concert| %>
-  <p>
-    <%= simple_format(concert.details) %>
-  </p>
+<% if (@concerts) %>
+  <% if (@concerts.empty?) %>
+    <p>No concert for this date</p>
+  <% else %>
+  <% @concerts.each do |concert| %>
+    <p>
+      <%= simple_format(concert.details) %>
+    </p>
+  <% end %>
+  <% end %>
 <% end %>
 
 
