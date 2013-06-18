@@ -1,5 +1,4 @@
 <h1>Welcome to Deadsets</h1>
-<%= "Concert is #{@concert}" %>
 
 <%= form_tag concerts_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
@@ -8,7 +7,7 @@
 
 <% @concerts.each do |concert| %>
   <p>
-    <%= concert.details %>
+    <%= simple_format(concert.details) %>
   </p>
 <% end %>
 

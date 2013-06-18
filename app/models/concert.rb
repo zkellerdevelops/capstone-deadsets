@@ -5,7 +5,7 @@ class Concert < ActiveRecord::Base
     if search
       where(:date => search).all
     else
-      all
+      []
     end
   end
 end
