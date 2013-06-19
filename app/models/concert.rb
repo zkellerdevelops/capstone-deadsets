@@ -12,11 +12,4 @@ class Concert < ActiveRecord::Base
     end
   end
 
-  # def slice_zero(search)
-  #   if search.starts_with "0"
-  #     search.slice!(0)
-  #     search
-  #   end
-  # end
-
 end
