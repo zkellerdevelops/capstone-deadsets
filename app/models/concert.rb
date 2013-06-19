@@ -3,12 +3,20 @@ class Concert < ActiveRecord::Base
 
   def self.search(search)
     if search
+      if search.starts_with? "0"
+        search.slice!(0)
+      end
       where(:date => search).all
     else
       []
-    if @search.blank?
-      flash[:notice] = 'No concert for this date'
-    end
     end
   end
+
+  # def slice_zero(search)
+  #   if search.starts_with "0"
+  #     search.slice!(0)
+  #     search
+  #   end
+  # end
+
 end

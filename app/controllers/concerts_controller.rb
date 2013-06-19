@@ -1,19 +1,14 @@
 class ConcertsController < ApplicationController
 
   def index
-    @concert = Concert.new
-    # @concerts = Concert.all
     @concerts = Concert.search(params[:search])
   end
 
-  def show
-    @concert = Concert.find(params[:date])
-  end
-
-  def create
-    puts params.inspect
-    concert = Concert.where(:date => params[:concert][:date]).first
-    redirect_to :root
+  def slice_zero
+    if date.starts_with "0"
+      date.slice!(0)
+      date
+    end
   end
 
 end
