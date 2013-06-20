@@ -12,18 +12,92 @@
  *= require_tree .
  */
 
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('Roboto-Thin-webfont.eot');
+    src: url('Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Roboto-Thin-webfont.woff') format('woff'),
+         url('Roboto-Thin-webfont.ttf') format('truetype'),
+         url('Roboto-Thin-webfont.svg#RobotoThin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body, html {
+  margin: 0;
+/*  background-image: url(/assets/pattern.png);
+  background-repeat: repeat;*/
+  background-color: black;
+}
 
 h1 {
   font-family: 'Helvetica', sans-serif;
-  font-size: 3em;
+  font-size: 34px;
+  color: white;
 }
 
 h2 {
-  font-family: 'Helvetica', sans-serif;
-  font-size: 1.5em;
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 14px;
+  color: black;
+  line-height: 16px;
 }
 
 p {
-  font-family: 'Helvetica', sans-serif;
-  font-size: 1em;
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+}
+
+/*p .notice .alert {
+  background-color: black;
+}*/
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+}
+
+#header {
+  width: 100%;
+  height: 15em;
+  background-image: url(/assets/dead_header1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+}
+
+#headline {
+  width: 70%;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  padding-left: 4em;
+}
+
+#header img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#search_wrapper {
+  width: 100%;
+  background-color: #fff200;
+  padding-top: 1em;
+  padding-left: 4em;
+}
+
+#search {
+  width: 50%;
+  padding-bottom: 1em;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding-top: 1em;
+  padding-left: 4em;
 }
