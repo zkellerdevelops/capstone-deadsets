@@ -1,16 +1,16 @@
 <div id="wrapper">
   <div id="header">
     <div id="headline">
-      <img src="/assets/title.png">
+      <%= link_to(image_tag("/assets/title.png"), root_path) %>
     </div>
   </div>
 
     <div id="search_wrapper">
-      <div id="search">
-        <h2>Please enter a Grateful Dead<br> concert date in MM-DD-YY format</h2>
+      <div id="searchfield">
+        <h2>Search for a Grateful Dead<br> concert date in mm-dd-yy format</h2>
         <%= form_tag concerts_path, :method => 'get' do %>
           <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :name => nil %>
+          <%= submit_tag "Search", :class => "searchbutton", :name => nil %>
         <% end %>
       </div>
     </div>
@@ -31,8 +31,8 @@
       <%= link_to "settings", edit_user_registration_path, :class => "user_links" %>
       <%= link_to "sign out", destroy_user_session_path, method: :delete, :class => "user_links" %>
     <% else %>
-      <%= link_to "sign in", new_user_session_path, :id => "sign_in" %>
-          <%= link_to "sign up", new_user_registration_path, :class => "user_links" %>
+      <%= link_to "Sign in  |", new_user_session_path, :id => "sign_in" %>
+          <%= link_to "  Sign up", new_user_registration_path, :class => "user_links" %>
     <% end %>
   </div>
 </div>

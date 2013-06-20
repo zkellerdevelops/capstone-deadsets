@@ -32,15 +32,15 @@ body, html {
 }
 
 h1 {
-  font-family: 'Helvetica', sans-serif;
-  font-size: 34px;
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 24px;
   color: white;
 }
 
 h2 {
   font-family: 'RobotoThin', sans-serif;
   font-size: 14px;
-  color: black;
+  color: #b0b0af;
   line-height: 16px;
 }
 
@@ -50,6 +50,62 @@ p {
   line-height: 20px;
   color: white;
 }
+
+a {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ff9900;
+  text-decoration: none;
+}
+
+.searchbutton {
+  width: 60px;
+  height: 20px;
+  background-color: #f4f4f4;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #404040;
+}
+
+label[for="user_email"] {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #b0b0af;
+  text-decoration: none;
+}
+
+label[for="user_password"] {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #b0b0af;
+  text-decoration: none;
+}
+
+label[for="user_remember_me"] {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #b0b0af;
+  text-decoration: none;
+}
+
+label[for="user_password_confirmation"] {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #b0b0af;
+  text-decoration: none;
+}
+
+
+
 
 /*p .notice .alert {
   background-color: black;
@@ -73,7 +129,7 @@ p {
 
 #headline {
   width: 70%;
-  padding-top: 3em;
+  padding-top: 5em;
   padding-bottom: 1em;
   padding-left: 4em;
 }
@@ -85,12 +141,13 @@ p {
 
 #search_wrapper {
   width: 100%;
-  background-color: #fff200;
+  background-image: url(/assets/geopattern.png);
+  background-repeat: repeat;
   padding-top: 1em;
   padding-left: 4em;
 }
 
-#search {
+#searchfield {
   width: 50%;
   padding-bottom: 1em;
 }
@@ -100,4 +157,13 @@ p {
   height: 100%;
   padding-top: 1em;
   padding-left: 4em;
+}
+
+#devisewrapper {
+  width: 100%;
+  background-image: url(/assets/geopattern.png);
+  background-repeat: repeat;
+  padding-top: 1em;
+  padding-left: 4em;
+  padding-bottom: 4em;
 }
