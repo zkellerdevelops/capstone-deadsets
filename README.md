@@ -14,11 +14,11 @@ These features are implemented and working:
 - Responsive CSS styling implemented
 - Add concert to favorites for signed in user implemented
 - Access favorites for signed in user
+- Delete favorites for signed in user
 
 <h2>To-do</h2>
 These features still need to be implemented:
-- Delete favorites for signed in user
-
+- TBD
 
 <h2>Features</h2>
 - <strong>Search for a concert</strong> - A concert date is entered, and the corresponding setlist data is populated on the page.
