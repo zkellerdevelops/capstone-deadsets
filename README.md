@@ -13,10 +13,10 @@ These features are implemented and working:
 - Devise user sign in/registration/sign out implemented
 - Responsive CSS styling implemented
 - Add concert to favorites for signed in user implemented
+- Access favorites for signed in user
 
 <h2>To-do</h2>
 These features still need to be implemented:
-- Access favorites for signed in user
 - Delete favorites for signed in user
 
 
