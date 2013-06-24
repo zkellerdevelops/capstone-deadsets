@@ -1,5 +1,7 @@
 class Concert < ActiveRecord::Base
   attr_accessible :date, :details
+  has_many :users, through: :favorites
+  has_many :favorites
 
   def self.search(search)
     if search

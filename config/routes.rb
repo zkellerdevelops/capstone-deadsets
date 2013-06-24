@@ -3,6 +3,7 @@ CapstoneDeadsets::Application.routes.draw do
   devise_for :users
 
   resources :concerts
+  resources :favorites
 
   root :to => "concerts#index"
 

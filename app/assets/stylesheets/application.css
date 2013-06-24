@@ -44,6 +44,12 @@ h2 {
   line-height: 16px;
 }
 
+h3 {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
 p {
   font-family: 'RobotoThin', sans-serif;
   font-size: 14px;
@@ -116,6 +122,7 @@ label[for="user_password_confirmation"] {
   height: 100%;
   margin: 0 auto;
   margin-top: 0;
+  overflow-x: hidden;
 }
 
 #header {
@@ -140,11 +147,12 @@ label[for="user_password_confirmation"] {
 }
 
 #search_wrapper {
-  width: 100%;
+/*  width: 100%;*/
   background-image: url(/assets/geopattern.png);
   background-repeat: repeat;
   padding-top: 1em;
   padding-left: 4em;
+  overflow-x: hidden;
 }
 
 #searchfield {
@@ -157,6 +165,12 @@ label[for="user_password_confirmation"] {
   height: 100%;
   padding-top: 1em;
   padding-left: 4em;
+}
+
+#alertbox {
+  width: 100%;
+  background-color: #ff9900;
+  padding: 5px 5px 5px 4em;
 }
 
 #devisewrapper {

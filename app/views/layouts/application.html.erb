@@ -7,9 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <div id="wrapper">
+  <div id="header">
+    <div id="headline">
+      <%= link_to(image_tag("/assets/title.png"), root_path) %>
+    </div>
+  </div>
 
 <%= yield %>
 
