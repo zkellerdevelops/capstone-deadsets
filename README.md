@@ -24,6 +24,12 @@ These features still need to be implemented:
 - <strong>Search for a concert</strong> - A concert date is entered, and the corresponding setlist data is populated on the page.
 - <strong>Add concert to favorites</strong> - Once a concert setlist has been returned on page, if the user is signed in, they can save the corresponding concert date to a list of favorites for easy retrieval at a later date by clicking the "create favorite" button.
 
+<h2>Demo</h2>
+http://capstone-deadsets.herokuapp.com/ (currently not working)
+
+<h2>Known Bugs</h2>
+None so far.....
+
 <h2>Author</h2>
 Zach Keller
 
