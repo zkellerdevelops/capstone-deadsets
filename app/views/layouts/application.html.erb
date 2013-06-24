@@ -31,8 +31,8 @@
   <div class="nav">
     <!-- <hr><br> -->
     <% if user_signed_in? %>
-          <%= link_to "settings", edit_user_registration_path, :class => "user_links" %>
-          <%= link_to "sign out", destroy_user_session_path, method: :delete, :class => "user_links" %>
+          <%= link_to "Settings", edit_user_registration_path, :class => "user_links" %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "user_links" %>
           <%= link_to "Favorites", favorites_path %>
 
 
