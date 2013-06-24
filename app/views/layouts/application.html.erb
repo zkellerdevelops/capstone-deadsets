@@ -14,7 +14,33 @@
     </div>
   </div>
 
+  <% unless a_devise_page? %>
+    <div id="search_wrapper">
+      <div id="searchfield">
+        <h2>Search for a Grateful Dead<br> concert date in mm-dd-yy format</h2>
+          <%= form_tag concerts_path, :method => 'get' do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :class => "searchbutton", :name => nil %>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
+
 <%= yield %>
 
+  <div class="nav">
+    <!-- <hr><br> -->
+    <% if user_signed_in? %>
+          <%= link_to "settings", edit_user_registration_path, :class => "user_links" %>
+          <%= link_to "sign out", destroy_user_session_path, method: :delete, :class => "user_links" %>
+          <%= link_to "Favorites", favorites_path %>
+
+
+
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, :id => "sign_in" %>
+              <%= link_to "Sign up", new_user_registration_path, :class => "user_links" %>
+    <% end %>
+  </div>
 </body>
 </html>

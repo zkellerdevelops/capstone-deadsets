@@ -1,0 +1,15 @@
+<% unless flash[:notice].nil? %>
+  <div id='alertbox'>
+    <h3><%= flash[:notice] %></h3>
+      <% flash.discard(:notice) %>
+  </div>
+<% end %>
+
+<div class="content">
+  <% @favorites.each do |favorite| %>
+    <p>
+      <%= favorite.concert.details[/.*/].chomp %>
+      <%= button_to "delete", favorite, :method=>:delete, :class=>:destroy %>
+    </p>
+  <% end %>
+</div>

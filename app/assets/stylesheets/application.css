@@ -110,7 +110,31 @@ label[for="user_password_confirmation"] {
   text-decoration: none;
 }
 
+label[for="user_current_password"] {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #b0b0af;
+  text-decoration: none;
+}
 
+i {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #b0b0af;
+  text-decoration: none;
+  text-transform: italic;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  float: left;
+  width: 200%;
+}
 
 
 /*p .notice .alert {
@@ -163,8 +187,9 @@ label[for="user_password_confirmation"] {
 .content {
   width: 100%;
   height: 100%;
-  padding-top: 1em;
-  padding-left: 4em;
+/*  padding-top: 1em;
+  padding-left: 4em;*/
+  padding: 1em 0em 4em 4em;
 }
 
 #alertbox {
@@ -180,4 +205,20 @@ label[for="user_password_confirmation"] {
   padding-top: 1em;
   padding-left: 4em;
   padding-bottom: 4em;
+}
+
+.nav {
+  padding: 1em 0em 1em 4em;
+/*  background-color: #ccc;*/
+  background-image: url(/assets/geopattern.png);
+  background-repeat: repeat;
+  width: 100%;
+  height: 1em;
+  position: fixed;
+  bottom: 0;
+}
+
+.nav a {
+  padding-right: 1em;
+  font-size: 14px;
 }
