@@ -4,4 +4,9 @@ class Favorite < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :concert
+
+    def setlist
+      songs = concert.details.split("\n")
+      songs[2, songs.size - 2].join("\n")
+    end
 end

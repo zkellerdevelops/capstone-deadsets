@@ -18,4 +18,10 @@ $( document ).ready(function(){
     $("body").fadeIn(300);
 
   $('#alertbox').delay(3000).fadeOut("slow");
+
+  $('.setlist_button').click(function (e) {
+    e.preventDefault()
+      $(this).parent().next(".setlist").toggle("slow");
+  });
+
 });

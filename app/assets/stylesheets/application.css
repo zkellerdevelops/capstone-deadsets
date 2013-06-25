@@ -277,6 +277,14 @@ hr {
   font-size: 14px;
 }
 
+.setlist {
+  display: none;
+}
+
+.setlist_button {
+  font-size: 14px;
+}
+
 
 @media (max-width: 480px) {
   .nav {

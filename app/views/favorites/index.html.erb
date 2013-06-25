@@ -13,8 +13,11 @@
   <h1>Favorite Concerts</h1>
     <% @favorites.each do |favorite| %>
     <p>
-      <%= favorite.concert.details[/.*/].chomp %>
+      <%= link_to favorite.concert.details[/.*/].chomp, "#", :class=>"setlist_button" %>
     </p>
+    <div class="setlist">
+      <%= simple_format favorite.setlist %>
+    </div>
       <%= button_to "Delete", favorite, :method=>:delete, :class=>"deletebutton" %>
     <% end %>
   <% end %>
