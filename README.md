@@ -20,6 +20,7 @@ These features are implemented and working:
 These features still need to be implemented:
 - Fix styling on add favorites and password reset buttons
 - Make favorite show entries link to the corresponding concert setlist
+- Create css styling for smartphone/tablet viewport size
 
 <h2>Features</h2>
 - <strong>Search for a concert</strong> - A concert date is entered, and the corresponding setlist data is populated on the page.
