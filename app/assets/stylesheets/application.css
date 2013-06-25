@@ -288,7 +288,16 @@ hr {
     top: 0;
   }
 
-
+  #header {
+    width: 100%;
+    height: 15em;
+    background-image: url(/assets/dead_header1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    top: 1em;
+    margin-bottom: -1em;
+  }
 
   #search_wrapper {
     /*  width: 100%;*/
