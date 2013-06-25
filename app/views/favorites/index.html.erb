@@ -3,18 +3,19 @@
     <h3><%= flash[:notice] %></h3>
       <% flash.discard(:notice) %>
       <% if @favorites.empty? %>
-          <h3>Dude, no favorites</h3>
+          <h3>You haven't saved any favorite concerts.</h3>
       <% end %>
   </div>
 <% end %>
 
 <div class="content">
   <% if @favorites.any? %>
+  <h1>Favorite Concerts</h1>
     <% @favorites.each do |favorite| %>
     <p>
       <%= favorite.concert.details[/.*/].chomp %>
-      <%= button_to "delete", favorite, :method=>:delete, :class=>:destroy %>
     </p>
+      <%= button_to "delete", favorite, :method=>:delete, :class=>"deletebutton" %>
     <% end %>
   <% end %>
 </div>
