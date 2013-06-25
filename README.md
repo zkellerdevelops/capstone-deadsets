@@ -15,20 +15,19 @@ These features are implemented and working:
 - Add concert to favorites for signed in user implemented
 - Access favorites for signed in user
 - Delete favorites for signed in user
+- Heroku app working properly, concert database scraped
 
 <h2>To-do</h2>
 These features still need to be implemented:
 - Fix styling on add favorites and password reset buttons
 - Make favorite show entries link to the corresponding concert setlist
-- Create css styling for smartphone/tablet viewport size
-- Create production Postgres DB migration for live heroku app
 
 <h2>Features</h2>
 - <strong>Search for a concert</strong> - A concert date is entered, and the corresponding setlist data is populated on the page.
 - <strong>Add concert to favorites</strong> - Once a concert setlist has been returned on page, if the user is signed in, they can save the corresponding concert date to a list of favorites for easy retrieval at a later date by clicking the "create favorite" button.
 
 <h2>Demo</h2>
-http://capstone-deadsets.herokuapp.com/ (currently not working)
+http://capstone-deadsets.herokuapp.com/
 
 <h2>Known Bugs</h2>
 None so far.....
