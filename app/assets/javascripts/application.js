@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 $( document ).ready(function(){
+  $("body").css("display", "none");
+    $("body").fadeIn(300);
+
   $('#alertbox').delay(3000).fadeOut("slow");
 });

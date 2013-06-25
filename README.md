@@ -18,7 +18,8 @@ These features are implemented and working:
 
 <h2>To-do</h2>
 These features still need to be implemented:
-- TBD
+- Fix styling on add favorites and password reset buttons
+- Make favorite show entries link to the corresponding concert setlist
 
 <h2>Features</h2>
 - <strong>Search for a concert</strong> - A concert date is entered, and the corresponding setlist data is populated on the page.

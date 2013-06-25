@@ -61,8 +61,12 @@ a {
   font-family: 'RobotoThin', sans-serif;
   font-size: 12px;
   line-height: 20px;
-  color: #ff9900;
+  color: #b0b0af;
   text-decoration: none;
+}
+
+a:hover {
+  color: #ffb800;
 }
 
 .searchbutton {
@@ -76,6 +80,10 @@ a {
   font-size: 14px;
   font-weight: normal;
   color: #404040;
+}
+
+.searchbutton:hover {
+  background-color: #ffb800;
 }
 
 .deletebutton {
@@ -92,6 +100,29 @@ a {
   margin-bottom: 2em;
 }
 
+.deletebutton:hover {
+  background-color: #ffb800;
+}
+
+input[type="submit"] {
+  width: 60px;
+  height: 20px;
+  background-color: #f4f4f4;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #404040;
+  margin-bottom: 2em;
+  margin-left: 2px;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffb800;
+}
+
 label[for="user_email"] {
   font-family: 'RobotoThin', sans-serif;
   font-size: 12px;
@@ -100,7 +131,7 @@ label[for="user_email"] {
   text-decoration: none;
 }
 
-label[for="user_password"] {
+label[for="user_email"] {
   font-family: 'RobotoThin', sans-serif;
   font-size: 12px;
   line-height: 20px;
@@ -109,6 +140,14 @@ label[for="user_password"] {
 }
 
 label[for="user_remember_me"] {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #b0b0af;
+  text-decoration: none;
+}
+
+label[for="user_password"] {
   font-family: 'RobotoThin', sans-serif;
   font-size: 12px;
   line-height: 20px;
@@ -131,6 +170,7 @@ label[for="user_current_password"] {
   color: #b0b0af;
   text-decoration: none;
 }
+
 
 i {
   font-family: 'RobotoThin', sans-serif;

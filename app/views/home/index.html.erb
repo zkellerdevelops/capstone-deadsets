@@ -1,7 +1,7 @@
 <h1>Welcome to Deadsets</h1>
 <%= "Concert is #{@concert}" %>
 <%= form_for @concert do |f| %>
-  <%= f.label :date, "Enter show date:" %>
+  <%= f.label :date, "Enter concert date:" %>
   <%= f.text_field :date %>
   <%= f.submit "Submit" %>
 <% end %>

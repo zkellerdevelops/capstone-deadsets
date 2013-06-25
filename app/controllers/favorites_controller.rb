@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
     @favorite.user = current_user
     @favorite.save
     redirect_to :back
-    flash[:notice] = "This show was added to your favorites."
+    flash[:notice] = "This concert was added to your favorites."
   end
 
   def destroy
