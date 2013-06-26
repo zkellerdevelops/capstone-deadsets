@@ -40,8 +40,8 @@ http://capstone-deadsets.herokuapp.com/
 - Button CSS being stripped on iOS browsers
 
 <h2>About the data</h2>
-Setlist data was scraped from http://www.cs.cmu.edu/~mleone/gdead/setlists.html
-This site is no longer maintained. The following is quoted from the cmu.edu site:
+Setlist data was scraped from http://www.cs.cmu.edu/~mleone/gdead/setlists.html<br>
+This site is no longer maintained. The following is quoted from the cmu.edu site:<br>
 "Most of these setlists were extracted from a database that was created by Jerry Stratton (jerry@teetot.acusd.edu) and others. It's available by ftp from gdead.berkeley.edu.(Other credits are listed where applicable)."
 
 <h2>Author</h2>
