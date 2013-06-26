@@ -24,13 +24,4 @@ $( document ).ready(function(){
       $(this).parent().next(".setlist").toggle("slow");
   });
 
-  // prevent links/buttons from sticking on hover - touch devices
-  $('a').on('touchstart', function () {
-    $(this).css('background-color', '');
-  });
-
-  $('a').on('touchend', function () {
-    $(this).css('background-color', 'inherit');
-  });
-
 });

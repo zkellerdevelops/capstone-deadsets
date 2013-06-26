@@ -25,8 +25,10 @@ These features still need to be implemented:
 - Fix styling on add favorites and password reset buttons
 
 These features are planned for the very near future:
+- Add "notes" ability for users to add show notes/thoughts to favorited concerts
 - Replace delete button/styling changes for all links on app
 - Re-work homepage styling to better appear as a homepage/landing page
+- Implement card sliding transition of .content div
 - Deploy app on private server/get better url
 
 <h2>Features</h2>
@@ -38,6 +40,7 @@ http://capstone-deadsets.herokuapp.com/
 
 <h2>Known Bugs</h2>
 - Button CSS being stripped on iOS browsers
+- Buttons/links remain on hover state when pressed on touch devices
 
 <h2>About the data</h2>
 Setlist data was scraped from http://www.cs.cmu.edu/~mleone/gdead/setlists.html<br>
