@@ -14,7 +14,7 @@
 
         <% if user_signed_in? %>
           <%= form_for concert.favorites.new do |f| %>
-            <%= f.label :favorite %>
+            <%= f.label :favorite, :class=>"hidden_label" %>
             <%= f.hidden_field(:concert_id) %>
             <%= f.submit %>
           <% end %>

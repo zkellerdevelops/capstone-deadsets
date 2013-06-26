@@ -307,7 +307,7 @@ hr {
   font-size: 14px;
 }
 
-label {
+.hidden_label {
   display: none;
 }
 
