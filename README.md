@@ -1,5 +1,6 @@
 <h1>Deadsets</h1>
-NSS Ruby on Rails capstone project - NSS Cohort 2.
+Ruby on Rails capstone project<br>
+Nashvile Software School Cohort 2. www.nashvillesoftwareschool.com
 
 <h2>Purpose</h2>
 Deadsets is a Ruby on Rails app which allows users to search for Grateful Dead concert setlists. If a user is signed in, they can save a concert to a list of favorites. It is my final project for Nashville Software School.
