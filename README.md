@@ -6,6 +6,8 @@ Deadsets is a Ruby on Rails app which allows users to search for Grateful Dead c
 
 The goal is to provide a responsive, nice-looking app which will allow fans of Grateful Dead to research setlists and hopefully, spark conversation about Grateful Dead concerts with fellow fans of the band.
 
+I often find myself looking up Grateful Dead setlists because iTunes and Google Play Music have a habit of randomly re-ordering my live shows. A typical dead show is 3 hours, split across 3 cd's. (Apparently, deadheads still use cd's.) I've found that different music players read metadata differently, and going back and forth between apps for years on different computers and operating systems has made files' metadata pretty glitchy. Listening to a dead show out of order is possibly one of my least favorite things. I figured an app like this would make it easy for me to check a setlist, should the need arise, and change my setlist order as necessary.
+
 <h2>Project Status</h2>
 These features are implemented and working:
 - Setlist data scraped from http://www.cs.cmu.edu/~mleone/gdead/setlists.html
@@ -16,11 +18,16 @@ These features are implemented and working:
 - Access favorites for signed in user
 - Delete favorites for signed in user
 - Heroku app working properly, concert database scraped
+- Favorite concerts toggle corresponding concert's setlist on click
 
 <h2>To-do</h2>
 These features still need to be implemented:
 - Fix styling on add favorites and password reset buttons
-- Make favorite show entries link to the corresponding concert setlist
+
+These features are planned for the very near future:
+- Replace delete button/styling changes for all links on app
+- Re-work homepage styling to better appear as a homepage/landing page
+- Deploy app on private server/get better url
 
 <h2>Features</h2>
 - <strong>Search for a concert</strong> - A concert date is entered, and the corresponding setlist data is populated on the page.
@@ -30,7 +37,12 @@ These features still need to be implemented:
 http://capstone-deadsets.herokuapp.com/
 
 <h2>Known Bugs</h2>
-None so far.....
+- Button CSS being stripped on iOS browsers
+
+<h2>About the data</h2>
+Setlist data was scraped from http://www.cs.cmu.edu/~mleone/gdead/setlists.html
+This site is no longer maintained. The following is quoted from the cmu.edu site:
+"Most of these setlists were extracted from a database that was created by Jerry Stratton (jerry@teetot.acusd.edu) and others. It's available by ftp from gdead.berkeley.edu.(Other credits are listed where applicable)."
 
 <h2>Author</h2>
 Zach Keller
