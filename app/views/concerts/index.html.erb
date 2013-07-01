@@ -6,32 +6,28 @@
 <% end %>
 
   <div class="content">
-  <h1><%= @search_term %> - <%= @concerts.count %></h1>
-    <% if (@concerts) %>
-      <% @concerts.each do |concert| %>
-        <p>
-          <%= concert.date.strftime("%m/%d/%Y") %>
-        </p>
-        <p>
-          <%= concert.venue %>
-        </p>
-        <p>
-          <%= concert.tour %>
-        </p>
-        <ul>
+  <%- if @concerts.present? %>
+    <h1><%= @search_term %> - <%= @concerts.count %></h1>
+    <% @concerts.each do |concert| %>
+      <p>
+        <%= link_to "#{concert.date.strftime('%m/%d/%Y')} - #{concert.venue}", "#", :class=>"setlist_button" %>
+      </p>
+      <div class="setlist">
+        <ol>
           <% concert.songs.each do |song| %>
-            <li><%= song.title %></li>li>
+            <li><%= song.title %></li>
           <% end %>
-        </ul>
-        <% if user_signed_in? %>
-          <%= form_for concert.favorites.new do |f| %>
-            <%= f.label :favorite, :class=>"hidden_label" %>
-            <%= f.hidden_field(:concert_id) %>
-            <%= f.submit %>
-          <% end %>
+        </ol>
+      </div>  
+      <% if user_signed_in? %>
+        <%= form_for concert.favorites.new do |f| %>
+          <%= f.label :favorite, :class=>"hidden_label" %>
+          <%= f.hidden_field(:concert_id) %>
+          <%= f.submit %>
         <% end %>
       <% end %>
     <% end %>
+  <% end %>
 
 
   </div>

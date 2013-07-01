@@ -14,10 +14,10 @@ class ConcertsController < ApplicationController
     @shows = Concert.all
 
     @venues = @shows.uniq {|c| c.venue }
-    @tours = @shows.uniq {|c| c.tour }
+    @tours = @shows.uniq {|c| c.tour unless c.blank? }
 
   if @concerts.blank?
-    flash[:notice] = "Sorry, there's no concert for this date"
+    flash[:notice] = "Sorry there is no match for your search criteria"
   end
 
   end
