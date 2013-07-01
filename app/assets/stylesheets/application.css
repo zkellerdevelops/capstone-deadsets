@@ -57,6 +57,17 @@ p {
   color: white;
 }
 
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+}
+
 a {
   font-family: 'RobotoThin', sans-serif;
   font-size: 12px;

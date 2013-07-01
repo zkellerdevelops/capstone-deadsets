@@ -13,10 +13,14 @@
   <h1>Favorite Concerts</h1>
     <% @favorites.each do |favorite| %>
     <p>
-      <%= link_to favorite.concert.details[/.*/].chomp, "#", :class=>"setlist_button" %>
+      <%= link_to "#{favorite.concert.date} - #{favorite.concert.venue} - #{favorite.concert.tour}", "#", :class=>"setlist_button" %>
     </p>
     <div class="setlist">
-      <%= simple_format favorite.setlist %>
+      <ul>
+        <% favorite.concert.songs.each do |song| %>
+          <li><%= song.title %></li>
+        <% end %>
+      </ul>
     </div>
       <%= button_to "Delete", favorite, :method=>:delete, :class=>"deletebutton" %>
     <% end %>
