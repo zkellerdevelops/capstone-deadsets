@@ -14,10 +14,39 @@ class Concert < ActiveRecord::Base
           end
         end
       search = search_split.join("-").to_s
-      where(:date => search).all
+      where(date: search).all
     else
       []
     end
   end
 
+  def self.search_by_venue(search)
+    if search
+      search_split = search.split("-")
+        search_split.each do |search|
+          if search.starts_with? "0"
+            search.slice!(0)
+          end
+        end
+      search = search_split.join("-").to_s
+      where(venue: search).all
+    else
+      []
+    end
+  end
+
+  def self.search_by_tour(search)
+    if search
+      search_split = search.split("-")
+        search_split.each do |search|
+          if search.starts_with? "0"
+            search.slice!(0)
+          end
+        end
+      search = search_split.join("-").to_s
+      where(tour: search).all
+    else
+      []
+    end
+  end
 end
