@@ -3,7 +3,8 @@ task :gd => :environment do
   require 'nokogiri'
   require 'open-uri'
 	@links_count = 0
-	range = (1..196).to_a
+	# This range can be set up to 196. It must be set at 196 to retrieve all 1955 concerts.
+	range = (1..1).to_a
 	range.each do |i|
 		page = Nokogiri::HTML(open("http://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html?page=#{i}"))
 		# Nokogiri supports CSS-style selectors
@@ -36,4 +37,5 @@ task :gd => :environment do
 			end
 		end
 	end
+	puts "The database was seeded with #{@links.count} concerts and their songs."
 end
