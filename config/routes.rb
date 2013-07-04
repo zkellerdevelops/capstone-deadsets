@@ -5,7 +5,7 @@ CapstoneDeadsets::Application.routes.draw do
   resources :concerts
   resources :concert_sets
   resources :setlists
-  resources :songs
+  resources :songs, only: [:create, :edit, :show, :index, :destroy]
   resources :favorites
 
   root :to => "concerts#index"

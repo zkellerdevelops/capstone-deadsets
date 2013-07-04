@@ -1,27 +1,34 @@
 class ConcertsController < ApplicationController
+  expose(:concerts) do
+    if params[:search_by_date]
+      Concert.search_by_date(params[:search_by_date])
+    elsif params[:search_by_venue]
+      Concert.search_by_venue(params[:search_by_venue])
+    elsif params[:search_by_tour]
+      Concert.search_by_tour(params[:search_by_tour])
+    else
+      concerts = todays_concerts
+    end
+  end
+
+  expose(:concerts_count) { concerts.count }
 
   def index
-  	if params[:search_by_date]
-    	@concerts = Concert.search_by_date(params[:search_by_date])
-    	@search_term = params[:search_by_date]
-    elsif params[:search_by_venue]
-    	@concerts = Concert.search_by_venue(params[:search_by_venue])
-    	@search_term = params[:search_by_venue]
-    elsif params[:search_by_tour]
-    	@concerts = Concert.search_by_tour(params[:search_by_tour])
-    	@search_term = params[:search_by_tour]
+    if concerts.blank?
+      flash[:notice] = "Please try again"
     end
-    @shows = Concert.all
-
-    @venues = @shows.uniq {|c| c.venue }
-    @tours = @shows.uniq {|c| c.tour unless c.blank? }
-
-  if @concerts.blank?
-    flash[:notice] = "Sorry there is no match for your search criteria"
   end
 
-  end
 
+  def todays_concerts
+    concert_collection = Concert.all
+    concert_collection.collect! do |concert|
+      if concert.date.strftime('%m/%d') == Time.now.strftime('%m/%d')
+        concert
+      end
+    end
+    concert_collection.reject! { |c| c.nil? }
+  end
 
 end
 

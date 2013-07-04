@@ -17,6 +17,7 @@ class Concert < ActiveRecord::Base
       where(date: search).all
     else
       []
+      flash[:notice] = "Sorry there is no match for your search criteria"
     end
   end
 
@@ -32,6 +33,7 @@ class Concert < ActiveRecord::Base
       where(venue: search).all
     else
       []
+      flash[:notice] = "Sorry there is no match for your search criteria"
     end
   end
 
@@ -47,6 +49,7 @@ class Concert < ActiveRecord::Base
       where(tour: search).all
     else
       []
+      flash[:notice] = "Sorry there is no match for your search criteria"
     end
   end
 end

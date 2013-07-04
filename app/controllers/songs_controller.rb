@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+  expose(:song) { Song.find(params[:id]) }
+
 	def new
 		@song = Song.new
 	end
