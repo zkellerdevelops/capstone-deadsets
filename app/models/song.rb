@@ -3,6 +3,7 @@ class Song < ActiveRecord::Base
   has_many :setlists
   has_many :concerts, through: :setlists
 
+
   def times_played
     self.concerts.count
   end

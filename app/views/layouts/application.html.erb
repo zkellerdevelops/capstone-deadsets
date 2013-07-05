@@ -40,7 +40,7 @@
           <% end %>
       </div>
       <div id="searchfield">
-        <h2>Search by Venue</h2>
+        <h2>Search by Venue (<%= venues_count %>)</h2>
           <%= form_tag concerts_path, :method => 'get' do %>
             <%= select_tag :search_by_venue, options_from_collection_for_select(venue_options, "venue", "venue"), prompt: "Select something" %>
             <%= submit_tag "Search", :class => "searchbutton", :name => nil %>
