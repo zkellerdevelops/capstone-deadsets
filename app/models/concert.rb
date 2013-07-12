@@ -52,4 +52,20 @@ class Concert < ActiveRecord::Base
       flash[:notice] = "Sorry there is no match for your search criteria"
     end
   end
+
+  def first_set
+    self.setlists.where(group: "Set 1")
+  end
+
+  def second_set
+    self.setlists.where(group: "Set 2")
+  end
+
+  def third_set
+    self.setlists.where(group: "Set 3")
+  end
+
+  def encore
+    self.setlists.where(group: "Encore:")
+  end
 end
