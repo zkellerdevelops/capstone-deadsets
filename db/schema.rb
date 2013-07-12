@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130630155649) do
   create_table "songs", :force => true do |t|
     t.string   "title"
     t.string   "media_link"
+    t.string   "info"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
