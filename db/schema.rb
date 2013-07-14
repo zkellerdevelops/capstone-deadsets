@@ -11,11 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130623202033) do
+ActiveRecord::Schema.define(:version => 20130630155649) do
 
   create_table "concerts", :force => true do |t|
-    t.string   "date"
-    t.text     "details"
+    t.date     "date"
+    t.text     "venue"
+    t.text     "tour"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -28,8 +29,18 @@ ActiveRecord::Schema.define(:version => 20130623202033) do
   end
 
   create_table "setlists", :force => true do |t|
-    t.text     "showdate"
-    t.text     "deadset"
+    t.integer  "concert_id"
+    t.integer  "song_id"
+    t.integer  "order"
+    t.string   "group"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "songs", :force => true do |t|
+    t.string   "title"
+    t.string   "media_link"
+    t.string   "info"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -47,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20130623202033) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

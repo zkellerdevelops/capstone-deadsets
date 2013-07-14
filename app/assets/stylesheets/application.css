@@ -57,9 +57,26 @@ p {
   color: white;
 }
 
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-family: 'RobotoThin', sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+.info_part {
+  font-size: 10px;
+  color: #FFEAB5;
+  padding-left: 10px;
+
+}
+
 a {
   font-family: 'RobotoThin', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 20px;
   color: #b0b0af;
   text-decoration: none;

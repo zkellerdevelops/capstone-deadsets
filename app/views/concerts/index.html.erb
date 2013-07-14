@@ -4,14 +4,54 @@
       <% flash.discard(:notice) %>
   </div>
 <% end %>
-
-  <div class="content">u
-    <% if (@concerts) %>
-      <% @concerts.each do |concert| %>
+  <div class="content">
+  <%- if concerts.present? %>
+    <h1><%= search_criteria %> - <%= concerts_count %></h1>
+    <% concerts.each do |concert| %>
+      <%- if !concert.nil? %>
         <p>
-          <%= simple_format(concert.details) %>
+          <%= link_to "#{concert.date.strftime('%m/%d/%Y')} - #{concert.venue}", "#", :class=>"setlist_button" %>
         </p>
-
+        <div class="setlist">
+          <% if concert.first_set.present? %>
+            <ul>
+              <li>Set 1</li>
+              <% concert.first_set.each do |set| %>
+                <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+              <% end %>
+            </ul>
+            <ul>
+              <li>Set 2</li>
+              <% concert.second_set.each do |set| %>
+                <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+              <% end %>
+            </ul>
+            <% if concert.third_set.present? %>
+              <ul>
+                <li>Set 3</li>
+                <% concert.third_set.each do |set| %>
+                  <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+                <% end %>
+              </ul>
+            <% end %>
+            <ul>
+              <li>Encore</li>
+              <% concert.encore.each do |set| %>
+                <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <% if concert.setlists.empty? %>
+              <p>No songs have been recorded for this concert</p>
+            <% else %>
+              <ul>
+                <% concert.setlists.each do |set| %>
+                  <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+                <% end %>
+              </ul>
+            <% end %>
+          <% end %>
+        </div>  
         <% if user_signed_in? %>
           <%= form_for concert.favorites.new do |f| %>
             <%= f.label :favorite, :class=>"hidden_label" %>
@@ -21,7 +61,6 @@
         <% end %>
       <% end %>
     <% end %>
-
-
+  <% end %>
   </div>
 </div>

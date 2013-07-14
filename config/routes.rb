@@ -3,6 +3,9 @@ CapstoneDeadsets::Application.routes.draw do
   devise_for :users
 
   resources :concerts
+  resources :concert_sets
+  resources :setlists
+  resources :songs, only: [:create, :edit, :show, :index, :destroy]
   resources :favorites
 
   root :to => "concerts#index"

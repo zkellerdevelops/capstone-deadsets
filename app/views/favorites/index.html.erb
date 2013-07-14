@@ -12,12 +12,49 @@
   <% if @favorites.any? %>
   <h1>Favorite Concerts</h1>
     <% @favorites.each do |favorite| %>
-    <p>
-      <%= link_to favorite.concert.details[/.*/].chomp, "#", :class=>"setlist_button" %>
-    </p>
-    <div class="setlist">
-      <%= simple_format favorite.setlist %>
-    </div>
+      <p>
+        <%= link_to "#{favorite.concert.date} - #{favorite.concert.venue} - #{favorite.concert.tour}", "#", :class=>"setlist_button" %>
+      </p>
+      <div class="setlist">
+        <% if favorite.concert.first_set.present? %>
+          <ul>
+            <li>Set 1</li>
+            <% favorite.concert.first_set.each do |set| %>
+              <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+            <% end %>
+          </ul>
+          <ul>
+            <li>Set 2</li>
+            <% favorite.concert.second_set.each do |set| %>
+              <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+            <% end %>
+          </ul>
+          <% if favorite.concert.third_set.present? %>
+            <ul>
+              <li>Set 3</li>
+              <% favorite.concert.third_set.each do |set| %>
+                <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+              <% end %>
+            </ul>
+          <% end %>
+          <ul>
+            <li>Encore</li>
+            <% favorite.concert.encore.each do |set| %>
+              <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <% if favorite.concert.setlists.empty? %>
+            <p>No songs have been recorded for this concert</p>
+          <% else %>
+            <ul>
+              <% favorite.concert.setlists.each do |set| %>
+                <li><%= link_to set.song.title, "songs/#{set.song.id}" %><span class="info_part"><%= set.song.info %></span></li>
+              <% end %>
+            </ul>
+          <% end %>
+        <% end %>
+      </div>  
       <%= button_to "Delete", favorite, :method=>:delete, :class=>"deletebutton" %>
     <% end %>
   <% end %>
