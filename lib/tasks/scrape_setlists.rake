@@ -2,7 +2,6 @@ desc 'Scrape grateful dead setlists from setlist.fm'
 task :gd => :environment do
   require 'nokogiri'
   require 'open-uri'
-	@links_count = 0
 	# This range can be set up to 196. It must be set at 196 to retrieve all 1955 concerts.
 	range = (1..196).to_a
 	range.each do |i|
@@ -40,5 +39,12 @@ task :gd => :environment do
 			end
 		end
 	end
-	puts "The database was seeded with #{@links.count} concerts and their songs."
+	Setlist.where(group: "Set One").each do |set|
+		set.group = "Set 1"
+		set.save
+	end
+	Setlist.where(group: "Set Two").each do |set|
+		set.group = "Set 2"
+		set.save
+	end
 end
