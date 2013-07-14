@@ -2,9 +2,8 @@ desc 'Scrape grateful dead setlists from setlist.fm'
 task :gd => :environment do
   require 'nokogiri'
   require 'open-uri'
-	@links_count = 0
 	# This range can be set up to 196. It must be set at 196 to retrieve all 1955 concerts.
-	range = (1..196).to_a
+	range = (39..39).to_a
 	range.each do |i|
 		page = Nokogiri::HTML(open("http://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html?page=#{i}"))
 		# Nokogiri supports CSS-style selectors
@@ -40,5 +39,18 @@ task :gd => :environment do
 			end
 		end
 	end
-	puts "The database was seeded with #{@links.count} concerts and their songs."
+	Setlist.where(group: "Set One").each do |set|
+		set.group = "Set 1"
+		set.save
+	end
+	Setlist.where(group: "Set Two").each do |set|
+		set.group = "Set 2"
+		set.save
+	end
+	song = Song.where(title: nil).first.destroy
+	Setlist.where(song_id: song.id).each do |set|
+		set.destroy
+	end
+	puts "Concerts: #{Concert.all.count}"
+	puts "Songs: #{Song.all.count}"
 end
